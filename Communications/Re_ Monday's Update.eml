@@ -1,0 +1,217 @@
+MIME-Version: 1.0
+Date: Mon, 2 Oct 2017 15:04:33 -0600
+From: Nathan Scherr <nathan_s_scherr@yahoo.ca>
+Subject: Re: Monday's Update
+Thread-Topic: Re: Monday's Update
+To: Carlo Berardi <thesweetspot@shaw.ca>, 
+	tylerguillaume <tylerguillaume@live.com>
+Cc: stephenleavitt10 <stephenleavitt10@gmail.com>
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="utf-8"
+
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Dutf-8">
+</head>
+<body>
+<div style=3D"color:#000; background-color:#fff; font-family:Helvetica Neue=
+, Helvetica, Arial, Lucida Grande, sans-serif;font-size:16px">
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3226"><span>Hi Carlo,</span></di=
+v>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3226"><br>
+</div>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3226" dir=3D"ltr">In order to he=
+lp facilitate Inventory from our end there is the option to do a full expor=
+t of all the inventory items into an excel spreadsheet. Since our database =
+doesn't have a full inventory list it
+ won't be overly useful. If in the future your full inventory list is store=
+d in our system then it would make going through inventory a lot smoother.<=
+/div>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3226" dir=3D"ltr"><br>
+</div>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3226" dir=3D"ltr">As for merging=
+ the three tables into one, that is a bigger project to complete than we ca=
+n handle prior to the 16th. We would also need to standardize how your inve=
+ntory is loaded into the database. I
+ went through the items in the tables recently and found the same descripto=
+rs used in multiple fields. Ex: having a Brand, Model, Club Type, and Item =
+Type all have an accessory description available to them. In a normalized t=
+able there should only be one field
+ that would hold that description. This is something that can be done and m=
+ight take a full one to two months to complete.</div>
+<div></div>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3228">&nbsp;</div>
+<div class=3D"signature" id=3D"yui_3_16_0_ym19_1_1506955377980_3650"><br>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3651">Nathan</div>
+</div>
+<div class=3D"qtdSeparateBR" id=3D"yui_3_16_0_ym19_1_1506955377980_3697"><b=
+r>
+<br>
+</div>
+<div class=3D"yahoo_quoted" id=3D"yui_3_16_0_ym19_1_1506955377980_3659" sty=
+le=3D"display: block;">
+<div style=3D"font-family: Helvetica Neue, Helvetica, Arial, Lucida Grande,=
+ sans-serif; font-size: 16px;" id=3D"yui_3_16_0_ym19_1_1506955377980_3658">
+<div style=3D"font-family: HelveticaNeue, Helvetica Neue, Helvetica, Arial,=
+ Lucida Grande, sans-serif; font-size: 16px;" id=3D"yui_3_16_0_ym19_1_15069=
+55377980_3657">
+<div dir=3D"ltr" id=3D"yui_3_16_0_ym19_1_1506955377980_3663"><font size=3D"=
+2" face=3D"Arial" id=3D"yui_3_16_0_ym19_1_1506955377980_3741">
+<hr size=3D"1">
+<b><span style=3D"font-weight:bold;">From:</span></b> Carlo Berardi &lt;the=
+sweetspot@shaw.ca&gt;<br>
+<b><span style=3D"font-weight: bold;">To:</span></b> tylerguillaume &lt;tyl=
+erguillaume@live.com&gt;
+<br>
+<b><span style=3D"font-weight: bold;">Cc:</span></b> Nathan Scherr &lt;nath=
+an_s_scherr@yahoo.ca&gt;; stephenleavitt10 &lt;stephenleavitt10@gmail.com&g=
+t;<br>
+<b><span style=3D"font-weight: bold;">Sent:</span></b> Saturday, September =
+30, 2017 10:24 AM<br>
+<b><span style=3D"font-weight: bold;">Subject:</span></b> Re: Monday's Upda=
+te<br>
+</font></div>
+<div class=3D"y_msg_container" id=3D"yui_3_16_0_ym19_1_1506955377980_3656">=
+<br>
+<div id=3D"yiv3569913316">
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3655">
+<div style=3D"font-family:arial, helvetica, sans-serif;font-size:10pt;color=
+:#000000;" id=3D"yui_3_16_0_ym19_1_1506955377980_3654">
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3743">Heads up guys<br>
+</div>
+<div><br>
+</div>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3744">We are planning on doing a=
+ full inventory the week of October 16th...Is there anything that can facil=
+itate that process from your end?&nbsp; Is it possible to ditch the apparel=
+ /accessories/ clubs thing ? It really
+ is unnecessary for any function that I can see we have, and I don't know t=
+hat it wont complicate inventory management and searches. Feel free to corr=
+ect me if I'm wrong.<br>
+</div>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3745"><br>
+</div>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3750">I think that this will be =
+an opportunity to cost average the inventory as well....the stores will clo=
+se for a couple days and we will try minimize eBay sales to prevent further=
+ work and issues being caused.<br>
+</div>
+<div>We need an accurate and sustainable inventory... and given the continu=
+ing number of paper receipts being generated in the stores....it is not.
+<br>
+</div>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3748"><br>
+</div>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3746">Stephen we have tentativel=
+y planned a phone call for next Friday while Im driving home to discuss cur=
+rent changes and plan upcoming projects for the POS.<br>
+</div>
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3747"><br>
+</div>
+<div>Carlo<br>
+</div>
+<hr id=3D"yiv3569913316zwchr">
+<div id=3D"yui_3_16_0_ym19_1_1506955377980_3660"><b>From: </b>&quot;tylergu=
+illaume&quot; &lt;tylerguillaume@live.com&gt;<br>
+<b>To: </b>&quot;Carlo Berardi&quot; &lt;thesweetspot@shaw.ca&gt;<br>
+<b>Sent: </b>Friday, September 29, 2017 4:31:22 PM<br>
+<b>Subject: </b>RE: Monday's Update<br>
+</div>
+<br>
+<div><style><!--
+
+ _filtered #yiv3569913316 {font-family:"Cambria Math";panose-1:2 4 5 3 5 4 =
+6 3 2 4;}
+ _filtered #yiv3569913316 {font-family:Calibri;panose-1:2 15 5 2 2 2 4 3 2 =
+4;}
+
+#yiv3569913316 p.yiv3569913316MsoNormal, #yiv3569913316 li.yiv3569913316Mso=
+Normal, #yiv3569913316 div.yiv3569913316MsoNormal
+	{margin:0in;margin-bottom:.0001pt;font-size:11.0pt;font-family:"Calibri", =
+sans-serif;}
+#yiv3569913316 a:link, #yiv3569913316 span.yiv3569913316MsoHyperlink
+	{color:blue;text-decoration:underline;}
+#yiv3569913316 a:visited, #yiv3569913316 span.yiv3569913316MsoHyperlinkFoll=
+owed
+	{color:#954F72;text-decoration:underline;}
+#yiv3569913316 .yiv3569913316MsoChpDefault
+	{}
+ _filtered #yiv3569913316 {margin:1.0in 1.0in 1.0in 1.0in;}
+#yiv3569913316 div.yiv3569913316WordSection1
+	{}
+--></style>
+<div class=3D"yiv3569913316WordSection1">
+<div class=3D"yiv3569913316MsoNormal">Not overly critical. It does however =
+have a couple guides on how to do some of the new features like returns, ed=
+it taxes, or give passwords.
+</div>
+<div class=3D"yiv3569913316MsoNormal">&nbsp;</div>
+<div class=3D"yiv3569913316MsoNormal">Thank you,<br>
+Tyler Guillaume</div>
+<div class=3D"yiv3569913316MsoNormal">&nbsp;</div>
+<div style=3D"border:none;border-top:solid #E1E1E1 1.0pt;padding:3.0pt 0in =
+0in 0in;">
+<div class=3D"yiv3569913316MsoNormal" style=3D"border:none;padding:0in;"><b=
+>From: </b>
+<a rel=3D"nofollow" ymailto=3D"mailto:thesweetspot@shaw.ca" target=3D"_blan=
+k" href=3D"mailto:thesweetspot@shaw.ca">thesweetspot@shaw.ca</a><br>
+<b>Sent: </b>Friday, September 29, 2017 4:29 PM<br>
+<b>To: </b><a rel=3D"nofollow" ymailto=3D"mailto:tylerguillaume@live.com" t=
+arget=3D"_blank" href=3D"mailto:tylerguillaume@live.com">Tyler Guillaume</a=
+><br>
+<b>Subject: </b>Re: Monday's Update</div>
+</div>
+<div class=3D"yiv3569913316MsoNormal">&nbsp;</div>
+<div class=3D"yiv3569913316MsoNormal">not sure anyone will have time to see=
+ this before Monday....is it critical they do?</div>
+<div>
+<div class=3D"yiv3569913316MsoNormal">&nbsp;</div>
+<div>
+<div class=3D"yiv3569913316MsoNormal">On Sep 29, 2017 4:25 PM, Tyler Guilla=
+ume &lt;tylerguillaume@live.com&gt; wrote:</div>
+<blockquote style=3D"border:none;border-left:solid #CCCCCC 1.0pt;padding:0i=
+n 0in 0in 6.0pt;margin-left:4.8pt;margin-right:0in;">
+<div>
+<div>
+<div>Hello,</div>
+<div>&nbsp;</div>
+<div>Attached is a PowerPoint presentation of the new features that will be=
+ pushed to the live site on Monday.</div>
+<div>&nbsp;</div>
+<div>Thank you,<br>
+Tyler Guillaume</div>
+<div>&nbsp;</div>
+</div>
+</div>
+</blockquote>
+</div>
+</div>
+<div class=3D"yiv3569913316MsoNormal">&nbsp;</div>
+<div class=3D"yiv3569913316MsoNormal">&nbsp;</div>
+</div>
+<br>
+</div>
+<br>
+<div>-- <br>
+</div>
+<div>Carlo Berardi<br>
+<br>
+President / Owner<br>
+The Sweet Spot Discount Golf Inc.<br>
+Store: 306-692-8337<br>
+Cell: 306-681-7816<br>
+Email: thesweetspot@shaw.ca<br>
+Trade-in Guide: www.SweetSpotValueGuide.com<br>
+</div>
+</div>
+</div>
+</div>
+<br>
+<br>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
