@@ -1,0 +1,33 @@
+if exists(select sku from tbl_clubs where sku = 41504) 
+begin 
+PRINT N'Club'; 
+end 
+else if exists (select sku from tbl_accessories where sku = 41504)	
+begin 
+PRINT N'Accessory'; 
+end 
+else if exists (select sku from tbl_clothing where sku = 41504) 
+begin 
+PRINT N'Clothing'; 
+end
+	
+	42517
+	42251
+	41504
+
+if exists(select sku from tbl_clubs where sku = 40860)
+	begin
+		update tbl_clubs set quantity = 1, locationID = 1 where sku = 40860
+	end
+else if exists (select sku from tbl_accessories where sku = 40860)
+	begin
+		update tbl_accessories set quantity = 1, locationID = 1 where sku = 40860 
+	end
+
+else if exists (select sku from tbl_clothing where sku = 40860)
+	begin
+		update tbl_clothing set quantity = 1, locationID = 1 where sku = 40860
+	end
+
+
+
