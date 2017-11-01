@@ -1,0 +1,25 @@
+create table #temp(sku int primary key, amountSold int, brand varchar(300), model varchar(300)) 
+--Temp table created
+insert into #temp 
+--Inserting data into temp table
+select tbl_invoiceItem.sku, count(tbl_invoiceItem.sku) as 'amount sold',
+case when(select tbl_brand.brandName from tbl_brand where tbl_brand.brandID = (select tbl_clubs.brandID from tbl_clubs where tbl_clubs.sku = tbl_invoiceItem.sku)) is not null then 
+		(select tbl_brand.brandName from tbl_brand where tbl_brand.brandID = (select tbl_clubs.brandID from tbl_clubs where tbl_clubs.sku = tbl_invoiceItem.sku)) 
+when(select tbl_brand.brandName from tbl_brand where tbl_brand.brandID = (select tbl_accessories.brandID from tbl_accessories where tbl_accessories.sku = tbl_invoiceItem.sku)) is not null then
+		(select tbl_brand.brandName from tbl_brand where tbl_brand.brandID = (select tbl_accessories.brandID from tbl_accessories where tbl_accessories.sku = tbl_invoiceItem.sku))
+when(select tbl_brand.brandName from tbl_brand where tbl_brand.brandID = (select tbl_clothing.brandID from tbl_clothing where tbl_clothing.sku = tbl_invoiceItem.sku)) is not null then
+		(select tbl_brand.brandName from tbl_brand where tbl_brand.brandID = (select tbl_clothing.brandID from tbl_clothing where tbl_clothing.sku = tbl_invoiceItem.sku))
+end as 'brand',
+case when(select tbl_model.modelName from tbl_model where tbl_model.modelID = (select tbl_clubs.modelID from tbl_clubs where tbl_clubs.sku = tbl_invoiceItem.sku)) is not null then 
+		(select tbl_model.modelName from tbl_model where tbl_model.modelID = (select tbl_clubs.modelID from tbl_clubs where tbl_clubs.sku = tbl_invoiceItem.sku)) 
+when(select tbl_model.modelName from tbl_model where tbl_model.modelID = (select tbl_accessories.modelID from tbl_accessories where tbl_accessories.sku = tbl_invoiceItem.sku)) is not null then
+		(select tbl_model.modelName from tbl_model where tbl_model.modelID = (select tbl_accessories.modelID from tbl_accessories where tbl_accessories.sku = tbl_invoiceItem.sku))
+end as 'model'
+from tbl_invoiceItem where tbl_invoiceItem.sku not in (select sku from tbl_tempTradeInCartSkus)
+group by sku order by 'amount sold' desc;
+--Getting data from temp table
+select sku, amountSold from #temp order by amountSold desc;
+select brand, count(brand) as 'times sold' from #temp group by brand order by 'times sold' desc;
+select model, count(model) as 'times sold' from #temp group by model order by 'times sold' desc;
+--Deleting temp table
+drop table #temp;
