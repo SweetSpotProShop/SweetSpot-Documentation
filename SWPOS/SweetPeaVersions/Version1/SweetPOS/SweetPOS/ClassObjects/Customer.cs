@@ -1,0 +1,27 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace SweetPOS.ClassObjects
+{
+    public class Customer
+    {
+        public int intCustomerID { get; set; }
+        public string varFirstName { get; set; }
+        public string varLastName { get; set; }
+        public string varAddress { get; set; }
+        public string varHomePhone { get; set; }
+        public string varMobilePhone { get; set; }
+        public string varEmailAddress { get; set; }
+        public string varCityName { get; set; }
+        public int intProvinceID { get; set; }
+        public int intCountryID { get; set; }
+        public string varPostalCode { get; set; }
+        public DateTime dtmCreationDate { get; set; }
+        public bool bitAllowMarketing { get; set; }
+        public List<Receipt> lstReceipt { get; set; }
+
+        public Customer() { }
+    }
+}
