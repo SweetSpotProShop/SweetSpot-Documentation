@@ -1,0 +1,49 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SweetPOSMasterPage.master.cs" Inherits="SweetPOS.SweetPOSMasterPage" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+	<title>Sweet Pea</title>
+	<asp:ContentPlaceHolder ID="head" runat="server">
+		<style media="print">
+			.noPrint {
+				display: none;
+			}
+
+			.yesPrint {
+				display: inline-block !important;
+				margin-left: 10px !important;
+			}
+		</style>
+	</asp:ContentPlaceHolder>
+</head>
+<body>
+	<form id="frmMasterPageForm" runat="server" >
+		<div>
+			<asp:ContentPlaceHolder ID="SPMaster" runat="server" >
+				<div id="divMainMenu">
+					<ul>
+						<li><a href="HomePage.aspx">HOME</a></li>
+						<li><a href="CustomerHomePage.aspx">CUSTOMERS</a></li>
+						<li><a href="SalesHomePage.aspx">SALES</a></li>
+						<li><a href="InventoryHomePage.aspx">INVENTORY</a></li>
+						<li><a href="ReportsHomePage.aspx">REPORTS</a></li>
+						<li><a href="SettingsHomePage.aspx">SETTINGS</a></li>
+					</ul>
+				</div>
+				<%--<div id="divMainImage" >
+					<img src="Images/CompanyBanner.png" />
+				</div>--%>
+				<div id="divLogoutButton">
+					<asp:Button ID="btnLogout" runat="server" Text="LogOut" OnClick="btnLogout_Click" />
+				</div>
+				<link rel="stylesheet" type="text/css" href="CSS/MainStyleSheet.css" />
+			</asp:ContentPlaceHolder>
+			<div id="pageContent">
+				<asp:ContentPlaceHolder ID="IndividualPageContent" runat="server">
+				</asp:ContentPlaceHolder>
+			</div>
+		</div>
+	</form>
+</body>
+</html>

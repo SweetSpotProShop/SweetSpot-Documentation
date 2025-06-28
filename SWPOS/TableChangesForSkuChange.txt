@@ -1,0 +1,74 @@
+alter table tbl_tradeInSkusForCart
+add varStoreCodeTradeIn varchar(4)
+
+
+
+alter table tbl_location
+add varStoreCode varchar(2)
+
+
+
+alter table tbl_skuNumbers
+add varStoreCodeSku varchar(4)
+
+
+
+alter table tbl_skuNumbers
+add intLocationID int
+
+
+
+Tables to change sku from int to string:
+tbl_accessories
+tbl_clothing
+tbl_clubs
+tbl_currentSalesItems
+tbl_invoiceItem
+tbl_receiptItem
+tbl_specificApparel
+tbl_tempTradeInCartSkus
+
+
+
+Add Sub Number to Receipt Tables
+Table List:
+tbl_accessories => tblInventory
+tbl_clothing => tblInventory
+tbl_clubs => tblInventory
+tbl_brand  => tblBrand
+tbl_cashout => tblDailyCashout
+tbl_country => tblCountry
+tbl_CurrentSalesInvoice => tblReceiptCurrent
+tbl_currentSalesItems => tblReceiptItemCurrent
+tbl_currentSalesMops => tblReceiptPaymentCurrent
+tbl_customers => tblCustomer
+tbl_deletedInvoice => tblReceiptVoidCancel
+tbl_deletedInvoiceItem => tblReceiptItemVoidCancel
+tbl_deletedInvoiceMOP => tblReceiptPaymentVoidCancel
+tbl_employee => tblEmployee
+tbl_error => tblError
+tbl_invoice => tblReceipt
+tbl_invoiceItem => tblReceiptItem
+tbl_invoiceItemReturns => tblReceiptItemReturn
+tbl_invoiceMOP => tblReceiptPayment
+tbl_InvoiceNumbers => tblStoredReceiptNumber
+tbl_jobPosition => tblJobCode
+tbl_location => tblStoreLocation
+tbl_methodOfPayment => tblMethodOfPayment
+tbl_provState => tblProvince
+tbl_provStateTax => tblTaxRateByProvince
+tbl_receipt => tblPurchaseOrder: also need tblPurchaseOrderCurrent, tblPurchaseOrderVoidCancel
+tbl_receiptItem => tblPurchaseOrderItem: also neew tblPurchaseOrderItemCurrent, tblPurchaseOrderVoidCancel
+tbl_receiptNumbers  => tblStoredPurchaseOrderNumber
+tbl_skuNumbers => tblStoredInventorySKU
+tbl_taxRate => tblTaxRateByProvince
+tbl_taxType => tblTaxType
+tbl_tempTradeInCartSkus => tblPurchaseTradeIn
+tbl_tradeInSkusForCart => tblStoredTradInNumber
+tbl_transactionType => tblTransactionType
+tbl_userInfo => tblTHDEPLMHDH
+
+
+Taxes??
+
+

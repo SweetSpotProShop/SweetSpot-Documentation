@@ -1,0 +1,810 @@
+*****IDENTITIES TO BE REMOVED FROM MOST TABLES*****
+
+
+
+
+
+CREATE TABLE tbl_accessories(
+intInventoryID INT NOT NULL PRIMARY KEY, 
+varSku VARCHAR(30) NOT NULL,
+varSize VARCHAR(15) NOT NULL,
+varColour VARCHAR(30) NOT NULL,
+fltPrice float NOT NULL,
+fltCost float NOT NULL,
+intBrandID INT NOT NULL FOREIGN KEY REFERENCES tbl_brand(intBrandID), 
+intModelID INT NOT NULL FOREIGN KEY REFERENCES tbl_model(intModelID), 
+varTypeOfAccessory VARCHAR(30) NOT NULL,
+intQuantity int NOT NULL,
+intItemTypeID INT NOT NULL FOREIGN KEY REFERENCES tbl_itemType(intItemTypeID), 
+intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+varAdditionalInformation VARCHAR(200)  NOT NULL,
+varProdID VARCHAR(10) NOT NULL)
+
+
+CREATE TABLE tbl_brand(
+intBrandID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varBrandName] VARCHAR(30)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_cashout(
+dtmCashoutDate
+      ,[dtmCashoutTime] time(0)
+      ,intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[intEmployeeID] INT NOT NULL FOREIGN KEY REFERENCES tbl_employee(intEmployeeID), 
+      ,[fltSystemCountedBasedOnSystemTradeIn]
+      ,[fltSystemCountedBasedOnSystemGiftCard]
+      ,[fltSystemCountedBasedOnSystemCash]
+      ,[fltSystemCountedBasedOnSystemDebit]
+      ,[fltSystemCountedBasedOnSystemMasterCard]
+      ,[fltSystemCountedBasedOnSystemVisa]
+      ,[fltSystemCountedBasedOnSystemAmEx]
+      ,[fltManuallyCountedBasedOnReceiptsTradeIn]
+      ,[fltManuallyCountedBasedOnReceiptsGiftCard]
+      ,[fltManuallyCountedBasedOnReceiptsCash]
+      ,[fltManuallyCountedBasedOnReceiptsDebit]
+      ,[fltManuallyCountedBasedOnReceiptsMasterCard]
+      ,[fltManuallyCountedBasedOnReceiptsVisa]
+      ,[fltManuallyCountedBasedOnReceiptsAmEx]
+      ,[fltSalesSubTotal]
+      ,[fltGovernmentTaxAmount]
+      ,[fltHarmonizedTaxAmount]
+      ,[fltLiquorTaxAmount]
+      ,[fltProvincialTaxAmount]
+      ,[fltQuebecTaxAmount]
+      ,[fltRetailTaxAmount]
+      ,[fltCashDrawerOverShort]
+      ,[bitIsCashoutFinalized]
+      ,[bitIsCashoutProcessed],
+PRIMARY KEY(dtmCashoutDate, intLocationID))
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_clothing(
+intInventoryID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varSku] VARCHAR(30)
+      ,[varSize] VARCHAR(15)
+      ,[varColour] VARCHAR(30)
+      ,[varGender] VARCHAR(10)
+      ,[varStyle] VARCHAR(30)
+      ,[fltPrice]
+      ,[fltCost]
+      ,[intBrandID INT NOT NULL FOREIGN KEY REFERENCES tbl_brand(intBrandID), 
+      ,[intQuantity]
+      ,[intItemTypeID INT NOT NULL FOREIGN KEY REFERENCES tbl_itemType(intItemTypeID), 
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[varAdditionalInformation] VARCHAR(200)
+      ,[varProdID] VARCHAR(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_clubs(
+intInventoryID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varSku] VARCHAR(30)
+      ,[intBrandID INT NOT NULL FOREIGN KEY REFERENCES tbl_brand(intBrandID), 
+      ,[intModelID INT NOT NULL FOREIGN KEY REFERENCES tbl_model(intModelID), 
+      ,[varTypeOfClub] varchar(30)
+      ,[varShaftType] varchar(30)
+      ,[varNumberOfClubs] varchar(50)
+      ,[fltPremiumCharge]
+      ,[fltCost]
+      ,[fltPrice]
+      ,[intQuantity]
+      ,[varClubSpecification] varchar(50)
+      ,[varShaftSpecification] varchar(50)
+      ,[varShaftFlexability] varchar(50)
+      ,[varClubDexterity] varchar(10)
+      ,[intItemTypeID INT NOT NULL FOREIGN KEY REFERENCES tbl_itemType(intItemTypeID), 
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[bitIsUsedProduct]
+      ,[varAdditionalInformation] varchar(200)
+      ,[varProdID] varchar(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_country(
+intCountryID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varCountryName] varchar(50)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_currentPurchaseMops(
+intReceiptPaymentID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intReceiptID
+      ,[intPaymentID
+      ,[intChequeNumber]
+      ,[fltAmountPaid]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_currentReturnsItems(
+intInvoiceItemID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intInvoiceID]
+      ,[intInventoryID]
+      ,[intItemQuantity]
+      ,[varItemDescription] varchar(150)
+      ,[fltItemCost]
+      ,[fltItemPrice]
+      ,[fltItemDiscount]
+      ,[fltItemRefund]
+      ,[bitIsDiscountPercent]
+      ,[bitIsClubTradeIn]
+      ,[intItemTypeID INT NOT NULL FOREIGN KEY REFERENCES tbl_itemType(intItemTypeID), 
+      ,[varProdID] varchar(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_currentSalesInvoice(
+intInvoiceID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varInvoiceNumber] varchar(20)
+      ,[intInvoiceSubNumber]
+      ,[dtmInvoiceDate] date
+      ,[dtmInvoiceTime] time(0)
+      ,[intCustomerID]
+      ,[intEmployeeID]
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[intShippingProvinceID]
+      ,[fltShippingCharges]
+      ,[bitIsShipping]
+      ,[fltTotalDiscount]
+      ,[fltTotalTradeIn]
+      ,[fltSubTotal]
+      ,[fltBalanceDue]
+      ,[fltGovernmentTaxAmount]
+      ,[fltHarmonizedTaxAmount]
+      ,[fltLiquorTaxAmount]
+      ,[fltProvincialTaxAmount]
+      ,[fltQuebecTaxAmount]
+      ,[fltRetailTaxAmount]
+      ,[fltShippingTaxAmount]
+      ,[intTransactionTypeID]
+      ,[varAdditionalInformation] varchar(200)
+      ,[bitChargeGST]
+      ,[bitChargePST]
+      ,[bitChargeLCT]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_currentSalesItems(
+intInvoiceItemID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intInvoiceID]
+      ,[intInventoryID]
+      ,[intItemQuantity]
+      ,[varItemDescription] varchar(150)
+      ,[fltItemCost]
+      ,[fltItemPrice]
+      ,[fltItemDiscount]
+      ,[fltItemRefund]
+      ,[bitIsDiscountPercent]
+      ,[bitIsClubTradeIn]
+      ,[intItemTypeID INT NOT NULL FOREIGN KEY REFERENCES tbl_itemType(intItemTypeID), 
+      ,[varProdID] varchar(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_currentSalesItemsTaxes(
+intInvoiceItemID
+      ,intTaxTypeID
+      ,[fltTaxAmount]
+      ,[bitIsTaxCharged]
+PRIMARY KEY(intInvoiceItemID, intTaxTypeID))
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_currentSalesMops(
+intInvoicePaymentID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intInvoiceID]
+      ,[intPaymentID]
+      ,[fltAmountPaid]
+      ,[fltTenderedAmount]
+      ,[fltCustomerChange]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_customers(
+intCustomerID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varFirstName] varchar(50)
+      ,[varLastName] varchar(50)
+      ,[varAddress] varchar(150)
+      ,[secondaryAddress] varchar(150)
+      ,[varContactNumber] varchar(20)
+      ,[secondaryPhoneINT] varchar(150)
+      ,[billingAddress] varchar(150)
+      ,[varEmailAddress] varchar(50)
+      ,[varCityName] varchar(50)
+      ,[intProvinceID INT NOT NULL FOREIGN KEY REFERENCES tbl_provState(intProvinceID), 
+      ,[intCountryID INT NOT NULL FOREIGN KEY REFERENCES tbl_country(intCountryID), 
+      ,[varPostalCode] varchar(10)
+      ,[bitSendMarketing]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_dailySalesData(
+intSalesDataID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[dtmSalesDataDate] date
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[fltGSTCollected]
+      ,[fltGSTReturned]
+      ,[fltPSTCollected]
+      ,[fltPSTReturned]
+      ,[fltHSTCollected]
+      ,[fltHSTReturned]
+      ,[fltQSTCollected]
+      ,[fltQSTReturned]
+      ,[fltRSTCollected]
+      ,[fltRSTReturned]
+      ,[fltLCTCollected]
+      ,[fltLCTReturned]
+      ,[fltSalesDollars]
+      ,[fltSubTotal]
+      ,[fltCostGoodsSold]
+      ,[fltCostOfInventoryEOD]
+      ,[dtmCOIDateTaken] date
+      ,[dtmCOITimeTaken] time(0)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_employee(
+intEmployeeID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varFirstName] varchar(30)
+      ,[varLastName] varchar(30)
+      ,[intJobID INT NOT NULL FOREIGN KEY REFERENCES tbl_jobPosition(intJobID), 
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[varEmailAddress] varchar(30)
+      ,[varContactNumber] varchar(30)
+      ,[secondaryContactINT] varchar(30)
+      ,[varAddress] varchar(30)
+      ,[secondaryAddress] varchar(30)
+      ,[varCityName] varchar(30)
+      ,[intProvinceID INT NOT NULL FOREIGN KEY REFERENCES tbl_provState(intProvinceID), 
+      ,[intCountryID INT NOT NULL FOREIGN KEY REFERENCES tbl_country(intCountryID), 
+      ,[varPostalCode] varchar(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_error(
+intErrorTrackingID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intEmployeeID]
+      ,[dtmErrorDate] date
+      ,[dtmErrorTime] time(0)
+      ,[varErrorPage] varchar(100)
+      ,[varErrorMethod] varchar(500)
+      ,[intErrorCode]
+      ,[varErrorText] varchar(MAX)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_invoice(
+intInvoiceID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varInvoiceNumber] varchar(30)
+      ,[intInvoiceSubNumber]
+      ,[dtmInvoiceDate] date
+      ,[dtmInvoiceTime] time(0)
+      ,[intCustomerID]
+      ,[intEmployeeID]
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[intShippingProvinceID]
+      ,[fltShippingCharges]
+      ,[bitIsShipping]
+      ,[fltTotalDiscount]
+      ,[fltTotalTradeIn]
+      ,[fltSubTotal]
+      ,[fltBalanceDue]
+      ,[fltGovernmentTaxAmount]
+      ,[fltHarmonizedTaxAmount]
+      ,[fltLiquorTaxAmount]
+      ,[fltProvincialTaxAmount]
+      ,[fltQuebecTaxAmount]
+      ,[fltRetailTaxAmount]
+      ,[fltShippingTaxAmount]
+      ,[intTransactionTypeID]
+      ,[varAdditionalInformation] varchar(200)
+      ,[bitChargeGST]
+      ,[bitChargePST]
+      ,[bitChargeLCT]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_invoiceItem(
+intInvoiceItemID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intInvoiceID]
+      ,[intInventoryID]
+      ,[intItemQuantity]
+      ,[fltItemCost]
+      ,[fltItemPrice]
+      ,[fltItemDiscount]
+      ,[fltItemRefund]
+      ,[bitIsDiscountPercent]
+      ,[varItemDescription] varchar(200)
+      ,[intItemTypeID INT NOT NULL FOREIGN KEY REFERENCES tbl_itemType(intItemTypeID), 
+      ,[bitIsClubTradeIn]
+      ,[varProdID] varchar(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_invoiceItemReturns(
+intInvoiceItemID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intInvoiceID]
+      ,[intInventoryID]
+      ,[intItemQuantity]
+      ,[fltItemCost]
+      ,[fltItemPrice]
+      ,[fltItemDiscount]
+      ,[fltItemRefund]
+      ,[bitIsDiscountPercent]
+      ,[varItemDescription] varchar(200)
+      ,[intItemTypeID INT NOT NULL FOREIGN KEY REFERENCES tbl_itemType(intItemTypeID), 
+      ,[bitIsClubTradeIn]
+      ,[varProdID] varchar(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_invoiceItemTaxes(
+intInvoiceItemID
+      ,intTaxTypeID
+      ,[fltTaxAmount]
+      ,[bitIsTaxCharged]
+PRIMARY KEY(intInvoiceItemID, intTaxTypeID))
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_invoiceMOP(
+intInvoicePaymentID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intInvoiceID]
+      ,[intPaymentID]
+      ,[fltAmountPaid]
+      ,[fltTenderedAmount]
+      ,[fltCustomerChange]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_InvoiceNumbers(
+trackingNumber]
+      ,[invoiceNum]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_itemChangeTracking(
+intChangeID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[dtmChangeDate] date
+      ,[dtmChangeTime] time(0)
+      ,[intEmployeeID]
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[intInventoryID]
+      ,[fltOriginalCost]
+      ,[fltNewCost]
+      ,[fltOriginalPrice]
+      ,[fltNewPrice]
+      ,[intOriginalQuantity]
+      ,[intNewQuantity]
+      ,[varOriginalDescription] varchar(MAX)
+      ,[varNewDescription] varchar(MAX)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_itemType(
+intItemTypeID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varItemTypeName] varchar(15)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_jobPosition(
+intJobID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varJobTitle] varchar(30)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_methodOfPayment(
+intPaymentID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varPaymentName] varchar(30)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_model(
+intModelID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varModelName] varchar(100)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_provState(
+intProvinceID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varProvinceName] varchar(30)
+      ,[intCountryID INT NOT NULL FOREIGN KEY REFERENCES tbl_country(intCountryID), 
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_provStateTax(
+intProvinceID INT NOT NULL FOREIGN KEY REFERENCES tbl_provState(intProvinceID), 
+      ,intTaxID
+PRIMARY KEY(intProvinceID, intTaxID))
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_QueryStringCapture(
+intQueryExecuteID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[dtmQueryExecuteDate] date
+      ,[dtmQueryExecuteTime] time(0)
+      ,[varPageName] varchar(30)
+      ,[varMethodName] varchar(100)
+      ,[varQueryName] varchar(100)
+      ,[varSQLCommand] varchar(MAX)
+      ,[varParameters] varchar(MAX)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_receipt(
+intReceiptID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varReceiptNumber] varchar(30)
+      ,[dtmReceiptDate] date
+      ,[dtmReceiptTime] time(0)
+      ,[intCustomerID]
+      ,[intEmployeeID]
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[fltReceiptTotal]
+      ,[intTransactionTypeID]
+      ,[varAdditionalInformation] varchar(200)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_receiptItem(
+intReceiptItemID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intReceiptID]
+      ,[intInventoryID]
+      ,[intItemQuantity]
+      ,[varItemDescription] varchar(150)
+      ,[fltItemCost]
+      ,[varProdID] varchar(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_receiptMOP(
+intReceiptPaymentID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intReceiptID]
+      ,[intPaymentID]
+      ,[intChequeNumber]
+      ,[fltAmountPaid]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_receiptNumbers(
+trackingNumber] 
+      ,[receiptNumber]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_reportListing(
+intReportID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varReportName] varchar(30)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_reportView(
+intReportViewID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intReportID]
+      ,[dtmReportClickedDate] date
+      ,[dtmReportClickedTime] time(0)
+      ,[intEmployeeID]
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_skuNumbers(
+trackingNumber INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[sku]
+      ,[itemType]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_specificApparel(
+intSpecificApparelID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intInventoryID]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_specificGrip(
+intSpecificGripID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intInventoryID]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_storedStoreNumbers(
+intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[varStoreCode] varchar(2)
+      ,[intSetInventoryNumber]
+      ,[varAccessoryCode] varchar(2)
+      ,[varClothingCode] varchar(2)
+      ,[varClubCode] varchar(2)
+      ,[intInventoryIDTracking]
+      ,[intSetTradeInNumber]
+      ,[varTradeInCode] varchar(2)
+      ,[intSetInvoiceNumber]
+      ,[varInvoiceCode] varchar(2)
+      ,[intSetReceiptNumber]
+      ,[varReceiptCode] varchar(2)
+PRIMARY KEY(intLocationID))
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_taxRate(
+intProvinceID INT NOT NULL FOREIGN KEY REFERENCES tbl_provState(intProvinceID), 
+      ,dtmTaxEffectiveDate date
+      ,intTaxID
+      ,[fltTaxRate]
+PRIMARY KEY(intProvinceID, dtmTaxEffectiveDate, intTaxID))
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_taxType(
+intTaxID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varTaxName] varchar(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_taxTypePerInventoryItem(
+intInventoryID
+      ,intTaxID
+      ,[bitChargeTax]
+PRIMARY KEY(intInventoryID, intTaxID))
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_tempTradeInCartSkus(
+intTradeInID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varSku] varchar(30)
+      ,[intBrandID INT NOT NULL FOREIGN KEY REFERENCES tbl_brand(intBrandID), 
+      ,[intModelID INT NOT NULL FOREIGN KEY REFERENCES tbl_model(intModelID), 
+      ,[varTypeOfClub] varchar(30)
+      ,[varShaftType] varchar(30)
+      ,[varNumberOfClubs] varchar(30)
+      ,[flrPremiumCharge]
+      ,[fltCost]
+      ,[fltPrice]
+      ,[intQuantity]
+      ,[varClubSpecification] varchar(30)
+      ,[varShaftSpecification] varchar(30)
+      ,[varShaftFlex] varchar(30)
+      ,[varClubDexterity] varchar(10)
+      ,[intItemTypeID INT NOT NULL FOREIGN KEY REFERENCES tbl_itemType(intItemTypeID), 
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[used]
+      ,[varAdditionalInformation] varchar(200)
+      ,[varProdID] varchar(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_tradeInSkuPerLocation(
+intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,intInventoryID
+PRIMARY KEY(intLocationID, intInventoryID))
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_tradeInSkusForCart(
+locationID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[skuStartAt]
+      ,[skuStopAt]
+      ,[currentSKU]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_transactionType(
+intTransactionTypeID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[varTransactionName] varchar(25)
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_userInfo(
+intEmployeeID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[intUserPassword]
+  FROM [dbo].[]
+
+
+CREATE TABLE tbl_vendor(
+vendorID INT NOT NULL IDENTITY(1, 1) PRIMARY KEY, 
+      ,[vendorName] varchar(150)
+  FROM [dbo].[]
+
+
+CREATE TABLE tblTaxErrorInvoice(
+intInvoiceID] 
+      ,[varInvoiceNumber] varchar(20)
+      ,[intInvoiceSubNumber]
+      ,[dtmInvoiceDate] date
+      ,[dtmInvoiceTime] time(0)
+      ,[intCustomerID]
+      ,[intEmployeeID]
+      ,[intLocationID INT NOT NULL FOREIGN KEY REFERENCES tbl_location(intLocationID), 
+      ,[intShippingProvinceID]
+      ,[fltShippingCharges]
+      ,[bitIsShipping]
+      ,[fltTotalDiscount]
+      ,[fltTotalTradeIn]
+      ,[fltSubTotal]
+      ,[fltBalanceDue]
+      ,[fltGovernmentTaxAmount]
+      ,[fltHarmonizedTaxAmount]
+      ,[fltLiquorTaxAmount]
+      ,[fltProvincialTaxAmount]
+      ,[fltQuebecTaxAmount]
+      ,[fltRetailTaxAmount]
+      ,[fltShippingTaxAmount]
+      ,[intTransactionTypeID]
+      ,[varAdditionalInformation]  varchar(MAX)
+      ,[bitChargeGST]
+      ,[bitChargePST]
+      ,[bitChargeLCT]
+  FROM [dbo].[]
+
+
+CREATE TABLE tblTaxErrorItems(
+intInvoiceItemID]
+      ,[intInvoiceID]
+      ,[intInventoryID]
+      ,[intItemQuantity]
+      ,[fltItemCost]
+      ,[fltItemPrice]
+      ,[fltItemDiscount]
+      ,[fltItemRefund]
+      ,[bitIsDiscountPercent]
+      ,[varItemDescription] varchar(150)
+      ,[intItemTypeID INT NOT NULL FOREIGN KEY REFERENCES tbl_itemType(intItemTypeID), 
+      ,[bitIsClubTradeIn]
+      ,[varProdID] varchar(10)
+  FROM [dbo].[]
+
+
+CREATE TABLE tblTaxErrorItemsTaxes(
+intInvoiceItemID] 
+      ,[intTaxTypeID]
+      ,[fltTaxAmount]
+      ,[bitTaxCharged]
+  FROM [dbo].[]
+
+
+CREATE TABLE tblTaxErrorMOPS(
+intInvoicePaymentID]
+      ,[intInvoiceID]
+      ,[intPaymentID]
+      ,[fltAmountPaid]
+      ,[fltTenderedAmount]
+      ,[fltCustomerChange]
+  FROM [dbo].[]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
